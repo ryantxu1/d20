@@ -54,7 +54,7 @@ def prettyList(data: Dict, debug: bool = False) -> str:
         filler: int = len(key) - hwidth
         if (isinstance(
                 value,
-                collections.Iterable) and not isinstance(value, str)):
+                collections.abc.Iterable) and not isinstance(value, str)):
             table += "%s %*s\n" % (key, filler, '')
             for d in value:
                 table += "%*s %*s%s\n" % (len(key), '', filler, '', d)
